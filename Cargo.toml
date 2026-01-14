@@ -1,0 +1,7 @@
+[package]
+name = "agave-exit-slot"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+"agave-validator" = {version = "3.0.14"}
