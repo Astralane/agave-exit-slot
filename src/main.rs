@@ -46,6 +46,8 @@ async fn main() {
             temp = diff;
         }
         diff = target_slot - current_slot;
+        //add a sleep to avoid spamming the rpc server
+        thread::sleep(Duration::from_millis(400));
         current_slot = rpc_client.get_slot().unwrap();
     }
     // check for the snapshot change
