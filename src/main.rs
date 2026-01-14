@@ -66,7 +66,8 @@ async fn main() {
         highest_snapshot= rpc_client.get_highest_snapshot_slot().unwrap();
         new_full = highest_snapshot.full;
         new_incremental = highest_snapshot.incremental.unwrap(); 
-        println!{"Current highest snapshot: full {}, incremental {}", new_full, new_incremental};   
+        println!{"old snapshot {} vs new snapshot {}", incremental_snapshot_slot, new_incremental};   
+        thread::sleep(Duration::from_millis(2000));
     }
 
     // exit
