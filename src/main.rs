@@ -58,7 +58,7 @@ async fn main() {
     let mut new_full = highest_snapshot.full;
     let mut new_incremental = highest_snapshot.incremental.unwrap();
     let mut flag=false;
-    while new_full == full_snapshot_slot || new_incremental == incremental_snapshot_slot {
+    while new_full == full_snapshot_slot && new_incremental == incremental_snapshot_slot {
         if flag == false {
             println!("Waiting for new snapshot after reaching target slot {}", target_slot);
             flag=true;
