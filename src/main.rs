@@ -41,6 +41,8 @@ async fn main() {
 
     while target_slot > current_slot {
         //add a sleep to avoid spamming the rpc server
+        println!("{} slots left", diff);
+        diff = target_slot - current_slot;
         tokio::time::sleep(Duration::from_millis(400)).await;
         current_slot = rpc_client.get_slot().unwrap();
     }
