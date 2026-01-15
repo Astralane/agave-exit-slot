@@ -41,7 +41,7 @@ async fn main() {
 
     while target_slot > current_slot {
         //add a sleep to avoid spamming the rpc server
-        tokio::sleep(Duration::from_millis(400)).await;
+        tokio::time::sleep(Duration::from_millis(400)).await;
         current_slot = rpc_client.get_slot().unwrap();
     }
     // check for the snapshot change
